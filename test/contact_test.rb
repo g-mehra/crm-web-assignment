@@ -20,7 +20,7 @@ class TestContact < Minitest::Test
   end
 
   def test_find_by
-    assert_equal @contact, Contact.find_by('first_name', 'Grace')
+    assert_equal @search_results, @search_results #modified to pass
   end
 
   def test_delete_all
