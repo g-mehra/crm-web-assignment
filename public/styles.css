@@ -1,0 +1,60 @@
+.heading h1 {
+background: #3c3c3c;
+color: white;
+padding: 16px;
+font-family: helvetica;
+text-align: center;
+margin: 0;
+}
+
+.site-nav ul {
+  display: inline;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.site-nav ul li {
+  background: #d0d0d0;
+  color: white;
+  font-family: helvetica;
+  text-align: center;
+  margin: 1px;
+  font-size: 1em;
+  line-height: 2;
+
+}
+
+.contact-counter {
+  background-color: #f77777;
+  margin-left: 40px;
+  margin-right: 40px;
+
+
+
+}
+
+.contact-counter h1 {
+  line-height: 1;
+  padding: 7px;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.contact-list {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.contact {
+  list-style-type: none;
+  background-color: aqua;
+  font-weight: bolder;
+  font-family: helvetica;
+  line-height: 2;
+  margin: 15px;
+}
+
+.contact-footer {
+  font-size:0.7em;
+}

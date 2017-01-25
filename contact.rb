@@ -33,6 +33,8 @@ class Contact
     @@contacts
   end
 
+
+
   # This method should accept an id as an argument
   # and return the contact who has that id
   def self.find(id)

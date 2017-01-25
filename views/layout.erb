@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title><%= @crm_app_name%></title>
+    <link rel="stylesheet" href="http://localhost:4567/styles.css">
+  </head>
+  <body>
+    <main>
+      <div class = "site-head">
+        <div class = "heading">
+          <h1><%= @crm_app_name%></h1>
+        </div>
+        <nav class = "site-nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/contacts/new">Add a new contact</a></li>
+            <li><a href="/contacts">View all contacts</a></li>
+          </ul>
+      </nav>
+      </div>
+      <!-- <div class = "contact-display">
+        <div class ="contact-counter">
+          <ul>
+          <% Contact.all.each do |contact| %>
+            <li><%= contact.first_name %> <%= contact.last_name %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div> -->
+    </main>
+    <%= yield %>
+
+
+
+
+  </body>
+</html>
