@@ -38,10 +38,8 @@ class Contact
   # This method should accept an id as an argument
   # and return the contact who has that id
   def self.find(id)
-    @@contacts.each do |contact|
-      return contact if contact.id == id
+      @@contacts.find { |contact| contact.id == id }
     end
-
   end
 
   # This method should allow you to specify
@@ -51,6 +49,7 @@ class Contact
   def update(attribute, new_value)
 
     @@contacts.find { |contact| contact if contact.send("#{attribute}=", new_value) }
+    end
 
     # ATTEMPT #2 - Each, Send Method
 
@@ -73,7 +72,8 @@ class Contact
     # @note = new_value
     # end
 
-  end
+
+
 
   # This method should work similarly to the find method above
   # but it should allow you to search for a contact using attributes other than id
@@ -136,14 +136,16 @@ class Contact
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-    @@contacts.delete(self)
-  end
+    @@contacts.delete_if { |contact| contact.id == self.id }
+    end
+
+
+
 
   # Feel free to add other methods here, if you need them.
 
-end
 
-# Then, run the following at the command line:
+# Then, run  sthe following at the command line:
 #
 #   ruby test/contact_test.rb
 #
