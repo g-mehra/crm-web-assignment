@@ -6,8 +6,15 @@
 
     <ul class = "contact-list">
     <% Contact.all.each do |contact| %>
-      <li class = "contact"><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %> <%="(#{contact.email})"%></a><footer class ="contact-footer"><a href="/contacts/<%= contact.id %>/edit">Edit</a> |<a href="<% contact.delete %>"> Delete</a> </footer></li>
-
+      <li class = "contact">
+        <a href="/contacts/<%= contact.id %>">
+          <%= contact.first_name %> <%= contact.last_name %> <%="(#{contact.email})"%>
+        </a>
+        <footer class ="contact-footer">
+          <a href="/contacts/<%= contact.id %>/edit">Edit</a> |
+          <a href="/contacts/<%= contact.id %>"> Delete</a>
+        </footer>
+      </li>
     <% end %>
     </ul>
 </div>
