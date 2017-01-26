@@ -39,7 +39,6 @@ class Contact
   # and return the contact who has that id
   def self.find(id)
       @@contacts.find { |contact| contact.id == id }
-    end
   end
 
   # This method should allow you to specify
@@ -137,7 +136,8 @@ class Contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
     @@contacts.delete_if { |contact| contact.id == self.id }
-    end
+  end
+end
 
 
 
