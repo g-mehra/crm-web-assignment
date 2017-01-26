@@ -5,7 +5,7 @@
 require_relative 'contact'
 require 'sinatra'
 
-Contact.create('Betty', 'Maker', 'betty@bitmakerlabs.com', 'Developer')
+# Contact.create(first_name: 'Betty', last_name: 'Maker', email: 'betty@bitmakerlabs.com', note: 'Developer')
 
 
 get '/' do
@@ -24,9 +24,15 @@ get '/contacts/new' do
 end
 
 post '/contacts' do
-  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
+  contact = Contact.create(
+    first_name: params[:first_name],
+    last_name:  params[:last_name],
+    email:      params[:email],
+    note:       params[:note]
+  )
   redirect to('/contacts')
 end
+
 
 get '/contacts/:id' do
   @contact = Contact.find(params[:id].to_i)
@@ -69,4 +75,8 @@ delete '/contacts/:id' do
   else
     raise Sinatra::NotFound
   end
+end
+
+after do
+  ActiveRecord::Base.connection.close
 end
